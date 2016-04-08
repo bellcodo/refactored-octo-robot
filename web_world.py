@@ -6,6 +6,10 @@ app = Flask(__name__)
 def hello():
     return "Hello World!"
 
+@app.route('/activity_picker')
+def show_entries():
+    return render_template('show_entries.html', entries=entries)
+
 if __name__ == "__main__":
     # go get the PORT from the environment
     port = os.environ.get("PORT")
