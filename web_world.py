@@ -1,4 +1,5 @@
 from flask import Flask
+from flask import render_template
 import os
 app = Flask(__name__)
 
@@ -33,12 +34,13 @@ def hello():
 @app.route('/activity_picker', methods=["GET"])
 def show_entries():
     typing_url = get_choice()
-    return render_template('show_entries.html', typing_ul=typing_url)
+    return render_template('show_entries.html', typing_url=typing_url)
 
 if __name__ == "__main__":
     # go get the PORT from the environment
     port = os.environ.get("PORT")
     # run the app with the port and bind to any ip
+    app.debug = True
     app.run(
       "0.0.0.0"
     , port
