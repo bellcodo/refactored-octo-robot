@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
 {% block body %}
-Activity Picker here: {{ typing_url }}
+<img src="{{ url_for('static', filename='img/keyboard.jpg') }}" />
+Activity Picker here: <a href="http://{{ typing_url }}"> Typing! </a>
 {% endblock %}

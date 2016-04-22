@@ -25,7 +25,7 @@ def get_choice():
     
     %s
     """ % (url_for_list, typing_choice)
-    return todays_choice
+    return typing_choice
 
 @app.route("/")
 def hello():
